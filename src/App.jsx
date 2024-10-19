@@ -17,10 +17,24 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <Device name='Laptop' price='55'></Device>
+      <Device name='Mobile' price='32'></Device>
+      <Device name='Watch' price='3'></Device>
       <Person></Person>
-      <Person></Person>
+      <Student grade='A' score='90 +'></Student>
+      <Student grade={12} score='85'></Student>
       <Student></Student>
+      <Developer></Developer>
     </>
+  )
+}
+
+function Device (props){
+  // console.log(props)
+  return(
+    <div>
+      <h2>This Device: {props.name}, price: {props.price}</h2>
+    </div>
   )
 }
 
@@ -31,12 +45,28 @@ function Person (){
   return <h3>hi, welcome to react, I learning react, I am {person.name} my age: {age + money}</h3>
 }
 
-function Student (){
-  return <div>
+function Student ({grade=0, score=0}){
+  console.log(score, grade)
+  return <div className='student'>
     <h3>Info for this student</h3>
-    <p>Name: </p>
-    <p>Age:</p>
+    <p>Grade: {grade} </p>
+    <p>Scores: {score} </p>
   </div>
+}
+
+function Developer(){
+  const developerStyle = {
+    border: '2px solid blue',
+    margin: '15px',
+    padding: '15px',
+    borderRadius: '15px'
+  }
+  return (
+    <div style={developerStyle}>
+      <h4>Devoloper vai</h4>
+      <p>Coding:</p>
+    </div>
+  )
 }
 
 export default App

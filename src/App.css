@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.student{
+ border: 2px solid tomato;
+ margin: 15px;
+ padding: 15px;
+ border-radius: 10px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
