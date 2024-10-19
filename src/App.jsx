@@ -3,25 +3,35 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './todo'
+import Actor from './Actor'
+import Singers from './Singers'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const actors = ['shakib', 'rubel', 'shakil', 'raj rajjak', 'bappi', 'salman shah']
+
+  const singers = [
+    {id: 1, name: 'Dr. Mahfujur Rahman', age:48},
+    {id: 2, name: 'Eva Rahman', age:28},
+    {id: 3,name: 'Shuvro dev', age:38},
+    {id: 4, name: 'Pritom', age:29},
+  ]
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1>Vite + React</h1>
+      {
+        singers.map(singer=> <Singers singer={singer}></Singers>)
+      }
+      <Actor name={"Bappa Raj"}></Actor>
+      {
+        actors.map(actor=><Actor name={actor}></Actor>)
+      }
+
       {/* <Todo task='Learn React' isDone={true}></Todo>
       <Todo task='Concepts for React' isDone={false}></Todo>
       <Todo task='Concepts for JSX' isDone={true}></Todo> */}
-      
+
       {/* <Device name='Laptop' price='55'></Device>
       <Device name='Mobile' price='32'></Device>
       <Device name='Watch' price='3'></Device>
